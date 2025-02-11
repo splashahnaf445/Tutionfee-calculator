@@ -7,9 +7,9 @@ import java.awt.event.*;
 
 public class Calc {
     public static void main(String[] args) {
-            University Bracu = new University(8250,136,130,8250,88000,61150);
-            University Nsu = new University(6500,134,120,10000,0,20000);
-            University uiu = new University(6500,138,125,6500,0,22000);
+            University Bracu = new University(8250,136,130,8250,88000,61150,0.75);
+            University Nsu = new University(6500,134,120,10000,0,20000,0);
+            University uiu = new University(6500,138,125,6500,0,22000,0.50);
 
             JFrame frame = new JFrame("Tution Fee Calculator");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,7 +44,7 @@ public class Calc {
                                             if(name.getText().equals("brac")){
                                                     if(cg>=3.80){
                                                             total=((credits* Bracu.creditfee)*0.75+Bracu.semesterfee);
-                                                            cost.setText(total+"        BDT,"+"\n"+"Total cost for graduation: "+ Bracu.totalcostcse()+"  BDT");
+                                                            cost.setText(total+"        BDT,"+"\n"+"Total waived cost for graduation: "+ Bracu.waivedfee()+"  BDT");
 
                                                     }else{
                                                             total=((credits*Bracu.creditfee)+Bracu.semesterfee);
@@ -55,7 +55,7 @@ public class Calc {
                                             if(name.getText().equals("uiu")){
                                                     if(cg>=3.50){
                                                             total=((credits* uiu.creditfee)*0.50+uiu.semesterfee);
-                                                            cost.setText(total+"        BDT,"+"\n"+"Total cost for graduation: "+ uiu.totalcostcse()+"  BDT");
+                                                            cost.setText(total+"        BDT,"+"\n"+"Total waived cost for graduation: "+ uiu.waivedfee()+"  BDT");
 
                                                     }else{
                                                             total=((credits*uiu.creditfee)+uiu.semesterfee);
